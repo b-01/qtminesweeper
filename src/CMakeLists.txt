@@ -1,0 +1,25 @@
+PROJECT(custom_minesweeper)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
+
+# Set compiler flags for Debug and Release mode
+IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
+	#SET(CPP_FLAGS "${CPP_FLAGS} -Wall -Wextra")
+	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra")
+ELSEIF(CMAKE_BUILD_TYPE STREQUAL "Release")
+	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+	#SET(CPP_FLAGS "${CPP_FLAGS}")
+ENDIF()
+
+# Globally enable c++ standard 2011. this is not needed on windows
+IF(UNIX)
+	SET(CPP_FLAGS "${CPP_FLAGS} -std=c++11")
+ENDIF()
+
+# Add the cpp_flags to our compiler options
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CPP_FLAGS}")
+SET( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
+SET( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
+
+ADD_SUBDIRECTORY(minesweeper)
+ADD_SUBDIRECTORY(gui)
+ADD_SUBDIRECTORY(cli_test)

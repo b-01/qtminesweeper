@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>images/bomb.png</file>
+    <file>images/flag_error.png</file>
+    <file>images/flag_ok.png</file>
+    <file>images/flag.png</file>
+    <file>images/mine.png</file>
+    <file>images/happy_smiley.png</file>
+    <file>images/sad_smiley.png</file>
+</qresource>
+</RCC>
